@@ -4,5 +4,74 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: azure;
+}
+
+/* fonts */
+
+.font-titles {
+    font-family: "Edu Tas Beginner", sans-serif;
+}
+
+.font-date {
+    font-family:  "Sometype Mono", "monospace";
+}
+
+/* general */
+main {
+    min-height: 100vh;
+    background-image: url(../img/cork.png);
+}
+
+:root {
+    --my-gap: 20px;
+}
+
+/* ----- utils */
+
+.my-container{
+    margin: 0 auto;
+    max-width: 70vw;
+}
+
+/* */
+
+.title-wrapper {
+    background-image: url(../img/wall.png);
+    background-size: contain;
+    text-align: center;
+    min-height: 10vh;
+    margin-bottom: 30px;
+}
+
+.title-wrapper h1 {
+    translate: 0 25%;
+    font-weight: 800;
+}
+
+.card-wrapper {
+    gap: var(--my-gap);
+    padding: 0 80px;
+}
+
+.my-card {
+    background-color: whitesmoke;
+    aspect-ratio: 9/12;
+}
+
+@media screen and (min-width: 768px) {
+    .my-card {
+        width: calc(50%);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .my-card {
+        width: calc(100% / 2 - (var(--my-gap) * 1)/2);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .my-card {
+        width: calc(100% / 3 - (var(--my-gap) * 2)/3);
+    }
 }

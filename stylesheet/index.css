@@ -23,7 +23,10 @@ main {
 }
 
 :root {
-    --my-gap: 20px;
+    --my-gap : 20px;
+    --gaps-number-sm:2;
+    --col-number-sm: 2;
+    --col-number-md: 3;
 }
 
 /* ----- utils */
@@ -39,13 +42,14 @@ main {
     background-image: url(../img/wall.png);
     background-size: contain;
     text-align: center;
-    min-height: 10vh;
+    min-height: 15vh;
     margin-bottom: 30px;
 }
 
 .title-wrapper h1 {
-    translate: 0 25%;
+    translate: 0 30%;
     font-weight: 800;
+    font-size: 3rem;
 }
 
 .card-wrapper {
@@ -95,7 +99,7 @@ main {
     }
 
     .card-wrapper {
-        padding: 0 160px;
+        padding: 0 175px;
     }
 }
 
@@ -105,12 +109,47 @@ main {
     }
 
     .card-wrapper {
-        padding: 0 180px;
+        padding: 0 200px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .card-wrapper {
-        padding: 0 320px;
+        padding: 0 340px;
     }
 }
+
+
+/* imported */
+
+/* @media screen and (min-width: 410px) {
+    .card-wrapper {
+        padding: 0 10%;
+    }
+
+    .my-card {
+        width: calc(100% / var(--col-number-sm) - (var(--my-gap) / var(--col-number-sm)));
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-wrapper {
+        padding: 0 10%;
+    }
+
+    .my-card {
+        width: calc(100% / var(--col-number-md) - (var(--my-gap) / var(--col-number-md) * var(--gaps-number-sm)));
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-wrapper {
+        padding: 0 20%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card-wrapper {
+        padding: 0 25%;
+    }
+} */

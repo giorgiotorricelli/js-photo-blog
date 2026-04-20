@@ -15,7 +15,7 @@ fetch(apiUrl)
             console.log(foto);
             
             cardWrapperEl.innerHTML += `
-                                        <div class="my-card col-12 col-md-6 col-lg-4">
+                                        <div class="my-card col-12 col-md-6 col-lg-4" data-pic="${foto.url}">
                                             <div class="pin-wrapper">
                                                 <img class="pin" src="img/pin.svg" alt="pin">
                                             </div>
@@ -32,3 +32,18 @@ fetch(apiUrl)
     }).catch(error => {
         console.error('errore');
     })
+
+function clickOnCard(event){
+    const target = event.target
+    console.log(target.dataset.pic);
+    
+
+    if (target.closest('.my-card') !== null){
+        console.log(target.closest('.my-card'));
+    }
+    
+}
+
+cardWrapperEl.addEventListener(
+    'click', clickOnCard
+)

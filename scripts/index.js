@@ -3,6 +3,10 @@ const apiUrl = 'https://lanciweb.github.io/demo/api/pictures/';
 
 const fotoWrapperEl = document.querySelector('.foto-wrapper');
 const cardWrapperEl = document.querySelector('.card-wrapper');
+const overlayImgEl = document.querySelector('.overlay-img');
+const overlayContainer = document.querySelector('.overlay-container');
+const chiudiBtn = document.querySelector('.chiudi-btn');
+const body = document.querySelector('.body');
 
 /* let esempio = {id: 1, title: 'Skate Park', date: '01-07-2024',
      url: 'https://marcolanci.it/boolean/assets/pictures/1.png'} */
@@ -35,15 +39,27 @@ fetch(apiUrl)
 
 function clickOnCard(event){
     const target = event.target
-    console.log(target.dataset.pic);
+    const overlayImage = target.closest('.my-card').dataset.pic;
     
 
+    overlayContainer.classList.remove('d-none');
+    body.classList.add('overflow-hidden');
+
     if (target.closest('.my-card') !== null){
-        console.log(target.closest('.my-card'));
+        overlayImgEl.src = `${overlayImage}`;
     }
     
 }
 
+function dnoneOverlay(){
+    overlayContainer.classList.add('d-none');
+    body.classList.remove('overflow-hidden');
+}
+
 cardWrapperEl.addEventListener(
     'click', clickOnCard
+)
+
+chiudiBtn.addEventListener(
+    'click', dnoneOverlay
 )

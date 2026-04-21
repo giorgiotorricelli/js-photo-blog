@@ -77,6 +77,20 @@ function dnoneOverlay() {
     body.classList.remove('overflow-hidden');
 }
 
+function removeRotation(){
+    overlayImgEl.classList.remove('overlay-img-rotation');
+}
+
+function rotateNext(){
+    overlayImgEl.classList.add('overlay-img-rotation');
+    setTimeout(nextPic, 300)
+}
+
+function rotatePrev(){
+    overlayImgEl.classList.add('overlay-img-rotation');
+    setTimeout(previousPic, 300)
+}
+
 function nextPic() {
     currentId += 1;
 
@@ -90,6 +104,9 @@ function nextPic() {
         overlayImgEl.src = `${albumSaved[currentId].url}`;
         console.log(albumSaved[currentId].id);
     }
+
+    removeRotation();
+
     
 }
 
@@ -106,6 +123,8 @@ function previousPic() {
         overlayImgEl.src = `${albumSaved[currentId].url}`;
         console.log(albumSaved[currentId].id);
     }
+
+    removeRotation();
     
 }
 
@@ -117,10 +136,11 @@ chiudiBtn.addEventListener(
     'click', dnoneOverlay
 )
 
+
 nextBtn.addEventListener(
-    'click', nextPic
+    'click', rotateNext
 )
 
 backBtn.addEventListener(
-    'click', previousPic
+    'click', rotatePrev
 )
